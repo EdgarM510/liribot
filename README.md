@@ -8,8 +8,9 @@
 
 ### Usage
 While in the directory of **liri.js**, use the command line to type a search term as follows:
+
 (example)
-    node liri movie-this toy story
+`node liri movie-this toy story`
 
 First type **node liri**
 then type an **operator**
