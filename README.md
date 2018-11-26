@@ -1,5 +1,5 @@
 # LiriBot
-####The command line node app.
+**The command line node app**
 
 [Youtube video demo](https://youtu.be/x4Ugetbe5vo)
 
@@ -18,4 +18,5 @@ your choices are:
 * spotify-this-song
 * movie-this
 * do-what-it-says
+
 finally type a **search term**
