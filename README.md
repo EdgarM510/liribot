@@ -26,10 +26,10 @@ finally type a **search term**
 
 ### Requirements
 LiriBot uses **NodeJS** and the following npm packages:
-*DotEnv
-*Moment
-*Axios
-*Node-Spotify-API
+* DotEnv
+* Moment
+* Axios
+* Node-Spotify-API
 
 You will need a `.env` file with this content
 ```
