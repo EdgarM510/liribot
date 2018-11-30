@@ -4,14 +4,15 @@ let axios  = require("axios");
 let keys   = require("./keys.js");
 let moment = require('moment');
 moment().format();
-let spotify         = keys.spotify;
+let omdb            = keys.omdb;
 let bandsintown     = keys.bandsintown;
+let spotify         = keys.spotify;
 const client_id     = spotify.id;
 const client_secret = spotify.secret;
 
 let operator = process.argv[2];
 let queryArr = process.argv.slice(3);
-
+let logIt    = "[" + moment().format("MM/DD/YYYY h:mm:ss a") + "] " + process.argv.slice(2).join(" ");
 doSomething();
 
 function doSomething(){
@@ -20,6 +21,7 @@ function doSomething(){
         random   = random.trim().split(",");
         operator = random[0];
         queryArr = [random[1]];
+        logIt   += " = " + operator + " " + queryArr;
     }
     if (operator == "concert-this"){
         concertSearch();
@@ -35,6 +37,8 @@ function doSomething(){
         console.log('example "node liri movie-this toy story"');
         console.log(`XOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOX`);
     }
+    logIt += "\n";
+    fs.appendFile("./log.txt", logIt, err=>{if(err)console.log(err)});
 }
 
 function concertSearch(){
@@ -128,7 +132,7 @@ function movieSearch(){
     if (query == ""){
         query = "Mr.+Nobody";
     }
-    let queryURL = "https://www.omdbapi.com/?t=" + query + "&y=&plot=short&apikey=trilogy";
+    let queryURL = "https://www.omdbapi.com/?t=" + query + "&y=&plot=short&apikey=" + omdb.key;
     
     axios.get(queryURL).then(function(response){
         // console.log(response.data);
