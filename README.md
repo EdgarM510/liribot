@@ -1,6 +1,6 @@
 # LiriBot
-**The command line node app**
-[Youtube video demo](https://youtu.be/x4Ugetbe5vo)
+**The command line node app** 
+[Youtube video demo](https://youtu.be/wkICAV5u8tU)
 
 
 ### Summary
